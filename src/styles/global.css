@@ -159,3 +159,8 @@ a.card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.
 @media (max-width: 600px) { .card { padding: 22px; } .section { padding: 56px 0; } }
 .brand-logo { height: 44px; width: auto; }
 .footer-logo { display: inline-block; background: #fff; padding: 8px 12px; border-radius: 8px; }
+.feature { display: grid; align-content: start; gap: 18px; text-decoration: none; color: inherit; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 14px 24px; transition: transform .2s, box-shadow .2s; }
+.feature:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.07); }
+.feature > div { padding: 0 10px; }
+.feature h3 { font-size: 1.4rem; }
+.feature p { color: var(--ink-soft); margin: 0; }
