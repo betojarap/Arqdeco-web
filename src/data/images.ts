@@ -12,3 +12,12 @@ export function listImages(folder: string): string[] {
     return [];
   }
 }
+
+// Devuelve la ruta del logo si existe public/img/logo.(svg|png|webp|jpg).
+import { existsSync } from 'node:fs';
+export function findLogo(): string | undefined {
+  for (const ext of ['svg', 'png', 'webp', 'jpg']) {
+    if (existsSync(join(process.cwd(), 'public', 'img', `logo.${ext}`))) return `/img/logo.${ext}`;
+  }
+  return undefined;
+}

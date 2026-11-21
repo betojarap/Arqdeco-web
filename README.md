@@ -11,6 +11,7 @@ Sitio web de [www.arqdeco.com.pe](https://www.arqdeco.com.pe), hecho con [Astro]
 | Textos de cada página | `src/pages/*.astro` |
 | Fotos de la galería | Subir a `public/img/galeria/` (aparecen solas, en orden alfabético) |
 | Logos de clientes | Subir a `public/img/clientes/` |
+| Logo | Subir `public/img/logo.png` (o `logo.svg`) |
 | Colores y estilos | `src/styles/global.css` (variables al inicio) |
 
 Puedes editar los archivos directamente en GitHub. Cada cambio en `main` se publica automáticamente.
