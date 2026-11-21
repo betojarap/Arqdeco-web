@@ -6,7 +6,7 @@ import { site, services, yearsOfExperience } from '../data/site';
 const years = yearsOfExperience();
 ---
 <Base>
-  <section class="hero">
+  <section class="hero" style="--hero-img:url(/img/galeria/gal-02.jpg)">
     <div class="container">
       <span class="eyebrow" style="color:#b9e07f">Arquitectura · Construcción · Licencias</span>
       <h1>Contamos con la experiencia que tus proyectos necesitan.</h1>
@@ -37,7 +37,7 @@ const years = yearsOfExperience();
 
   <section class="section alt">
     <div class="container grid grid-2">
-      <Photo alt="Foto del equipo o de una obra de Arqdeco" />
+      <Photo src="/img/galeria/gal-14.jpg" alt="Equipo de Arqdeco trabajando en una obra" />
       <div>
         <span class="eyebrow">Quiénes somos</span>
         <h2>{site.legalName}</h2>
