@@ -34,11 +34,12 @@ export const nav = [
   { href: '/contacto/', label: 'Contacto' },
 ];
 
-export type Service = { id: string; title: string; short: string; items: string[] };
+export type Service = { id: string; title: string; short: string; image: string; items: string[] };
 
 export const services: Service[] = [
   {
     id: 'servicios-generales',
+    image: '/img/galeria/gal-04.jpg',
     title: 'Servicios generales y mantenimiento',
     short: 'Construcción, ampliaciones, remodelaciones e instalaciones para oficinas, viviendas y locales comerciales.',
     items: [
@@ -56,6 +57,7 @@ export const services: Service[] = [
   },
   {
     id: 'anteproyectos',
+    image: '/img/galeria/gal-16.jpg',
     title: 'Anteproyectos y obras civiles',
     short: 'Planos, presupuestos, licencias de edificación, ejecución y supervisión de obra.',
     items: [
@@ -70,6 +72,7 @@ export const services: Service[] = [
   },
   {
     id: 'expedientes-tecnicos',
+    image: '/img/galeria/gal-03.jpg',
     title: 'Expedientes técnicos (INDECI – Defensa Civil)',
     short: 'Te acompañamos hasta obtener tu Certificado de Inspección Técnica de Seguridad en Edificaciones.',
     items: [
@@ -84,6 +87,7 @@ export const services: Service[] = [
   },
   {
     id: 'tasaciones',
+    image: '/img/galeria/gal-08.jpg',
     title: 'Tasaciones',
     short: 'Valuaciones comerciales y de realización en Lima y provincias.',
     items: [
@@ -95,6 +99,7 @@ export const services: Service[] = [
   },
   {
     id: 'licencias',
+    image: '/img/galeria/gal-17.jpg',
     title: 'Licencias de funcionamiento',
     short: 'Preparamos y tramitamos tu expediente ante la municipalidad.',
     items: [
@@ -105,6 +110,7 @@ export const services: Service[] = [
   },
   {
     id: 'saneamiento',
+    image: '/img/galeria/IMG-20180825-WA0046.jpg',
     title: 'Saneamiento físico legal de inmuebles',
     short: 'Ordenamos la situación registral y legal de tu propiedad.',
     items: [

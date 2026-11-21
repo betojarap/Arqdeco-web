@@ -1,10 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import CtaBand from '../components/CtaBand.astro';
+import Photo from '../components/Photo.astro';
 import { services } from '../data/site';
 ---
 <Base title="Servicios" description="Mantenimiento, obras civiles, expedientes técnicos INDECI, tasaciones, licencias de funcionamiento y saneamiento físico legal en Lima.">
-  <section class="page-hero">
+  <section class="page-hero" style="--hero-img:url(/img/galeria/gal-04.jpg)">
     <div class="container">
       <span class="eyebrow" style="color:#b9e07f">Servicios</span>
       <h1>Soluciones integrales para tus espacios</h1>
@@ -22,6 +23,7 @@ import { services } from '../data/site';
             <p class="lead">{s.short}</p>
             <ul class="check-list">{s.items.map((it) => <li>{it}</li>)}</ul>
           </div>
+          <Photo src={s.image} alt={s.title} />
         </article>
       ))}
     </div>
