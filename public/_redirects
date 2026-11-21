@@ -1,0 +1,7 @@
+# Direcciones antiguas de WordPress que ya no existen
+/index.php/contacto/   /contacto/   301
+/index.php/nosotros/   /nosotros/   301
+/index.php/*           /:splat      301
+/normativa/            /normativas/ 301
+/wp-admin/*            /            301
+/wp-login.php          /            301

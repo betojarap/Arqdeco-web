@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { site, services, yearsOfExperience } from '../data/site';
+const years = yearsOfExperience();
+---
+<Base>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow" style="color:#f0b896">Arquitectura · Construcción · Licencias</span>
+      <h1>Contamos con la experiencia que tus proyectos necesitan.</h1>
+      <p class="lead">Servicios de arquitectura, diseño, construcción y mantenimiento en Lima. Te acompañamos desde el plano hasta el Certificado de Defensa Civil y la licencia de funcionamiento.</p>
+      <div class="actions">
+        <a class="btn" href="/contacto/">Solicitar cotización</a>
+        <a class="btn ghost" href="/servicios/">Ver servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Qué hacemos</span>
+      <h2>Nuestros servicios</h2>
+      <p class="lead">Un solo equipo para diseñar, construir, mantener y regularizar tus espacios.</p>
+      <div class="grid grid-3" style="margin-top:32px">
+        {services.map((s, i) => (
+          <a class="card" href={`/servicios/#${s.id}`}>
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.title}</h3>
+            <p>{s.short}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container grid grid-2">
+      <Photo alt="Foto del equipo o de una obra de Arqdeco" />
+      <div>
+        <span class="eyebrow">Quiénes somos</span>
+        <h2>{site.legalName}</h2>
+        <p>Somos una empresa dedicada a la arquitectura, el diseño, la construcción y el mantenimiento de edificaciones. Nuestro objetivo es brindar asesoría personalizada, capacitación e implementación de las normas de seguridad vigentes para edificaciones existentes, de acuerdo con el Reglamento Nacional de Edificaciones.</p>
+        <ul class="check-list">
+          <li>Tendencias innovadoras en diseño</li>
+          <li>Garantía de calidad en cada obra</li>
+          <li>Acompañamiento en trámites municipales y de INDECI</li>
+        </ul>
+        <div class="actions"><a class="btn ghost" href="/nosotros/" style="color:var(--accent-dark)">Conócenos</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>{years}+</strong><span>años de experiencia</span></div>
+        <div class="stat"><strong>6</strong><span>líneas de servicio</span></div>
+        <div class="stat"><strong>24/7</strong><span>soporte técnico en facility management</span></div>
+        <div class="stat"><strong>Lima</strong><span>y provincias</span></div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
