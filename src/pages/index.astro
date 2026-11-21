@@ -6,7 +6,7 @@ import { site, services, yearsOfExperience } from '../data/site';
 const years = yearsOfExperience();
 ---
 <Base>
-  <section class="hero" style="--hero-img:url(/img/galeria/gal-02.jpg)">
+  <section class="hero" style="--hero-img:url(/img/portada.webp)">
     <div class="container">
       <span class="eyebrow" style="color:#b9e07f">Arquitectura · Construcción · Licencias</span>
       <h1>Contamos con la experiencia que tus proyectos necesitan.</h1>
@@ -35,9 +35,30 @@ const years = yearsOfExperience();
     </div>
   </section>
 
+  <section class="section" style="padding-top:0">
+    <div class="container grid grid-2" style="align-items:stretch">
+      <a class="feature" href="/servicios/#servicios-generales">
+        <Photo src="/img/remodelacion.webp" alt="Oficina corporativa remodelada" ratio="16 / 10" />
+        <div>
+          <span class="eyebrow">Diseño y construcción</span>
+          <h3>Espacios que funcionan</h3>
+          <p>Remodelamos oficinas, locales y viviendas con acabados de calidad, desde el diseño hasta la entrega.</p>
+        </div>
+      </a>
+      <a class="feature" href="/servicios/#expedientes-tecnicos">
+        <Photo src="/img/expediente.webp" alt="Planos y lista de inspección de seguridad sobre un escritorio" ratio="16 / 10" />
+        <div>
+          <span class="eyebrow">Trámites y licencias</span>
+          <h3>Del plano a la licencia</h3>
+          <p>Preparamos expedientes técnicos y te acompañamos hasta obtener tu Certificado de Defensa Civil y tu licencia de funcionamiento.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
   <section class="section alt">
     <div class="container grid grid-2">
-      <Photo src="/img/galeria/gal-14.jpg" alt="Equipo de Arqdeco trabajando en una obra" />
+      <Photo src="/img/quienessomos.webp" alt="Equipo de ingenieros revisando planos en obra" />
       <div>
         <span class="eyebrow">Quiénes somos</span>
         <h2>{site.legalName}</h2>
