@@ -89,8 +89,10 @@ a.card { text-decoration: none; color: inherit; transition: transform .2s, box-s
 a.card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.07); }
 
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 22px; }
-.stat strong { display: block; font-size: 2.4rem; color: #8dc63f; line-height: 1; }
-.stat span { color: #c7cfd3; font-size: .95rem; }
+.stats-band { background: #fff; border-top: 1px solid var(--line); padding: 56px 0; }
+.stat { border-left: 3px solid #8dc63f; padding-left: 16px; }
+.stat strong { display: block; font-size: 2.4rem; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+.stat span { color: var(--ink-soft); font-size: .95rem; }
 
 .check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .check-list li { padding-left: 28px; position: relative; }
