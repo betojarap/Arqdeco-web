@@ -2,8 +2,8 @@
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import { site, services } from '../data/site';
-// Clave pública de Web3Forms (gratis en https://web3forms.com). Se configura como variable de entorno en Cloudflare Pages.
-const formKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
+// Clave pública de Web3Forms: se toma de site.ts (o de la variable PUBLIC_WEB3FORMS_KEY si existe).
+const formKey = import.meta.env.PUBLIC_WEB3FORMS_KEY || site.web3formsKey;
 ---
 <Base title="Contacto" description="Contáctanos por teléfono, WhatsApp o correo. Oficina en Centro Empresarial Panorama, Santiago de Surco, Lima.">
   <section class="page-hero">
