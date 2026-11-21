@@ -12,6 +12,8 @@ export const site = {
   phoneHref: 'tel:+51922243627',
   whatsapp: 'https://wa.me/51922243627?text=' + encodeURIComponent('Hola Arqdeco, quisiera información sobre sus servicios.'),
   email: 'susana@arqdeco.com.pe',
+  // Clave pública de Web3Forms para el formulario de contacto (no es secreta).
+  web3formsKey: 'e1d3c64f-c7ab-4694-a053-ed0b19c4ce1a',
   address: 'Av. Circunvalacion del Golf Los Incas Nro. 134 Int. 26 Centro Empresarial Panorama Torre 2 Piso 6 Lima - Lima - Santiago de Surco',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Av. Circunvalacion del Golf Los Incas 134, Santiago de Surco, Lima, Perú'),
   social: {

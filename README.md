@@ -35,7 +35,7 @@ npm run build    # genera el sitio en dist/
    - Build command: `npm run build`
    - Build output directory: `dist`
    - Variable de entorno `NODE_VERSION` = `22`
-4. Formulario de contacto: crear una clave gratis en https://web3forms.com con el correo que recibirá los mensajes y añadirla como variable de entorno `PUBLIC_WEB3FORMS_KEY`. Sin la clave, el formulario invita a escribir por WhatsApp o correo.
+4. Formulario de contacto: usa Web3Forms (https://web3forms.com). La clave está en `src/data/site.ts` (`web3formsKey`); para cambiar el correo que recibe los mensajes, se gestiona desde el panel de Web3Forms.
 5. Revisar la dirección de prueba `*.pages.dev`.
 6. Cuando todo esté aprobado: **Custom domains** → añadir `www.arqdeco.com.pe` y `arqdeco.com.pe`, y actualizar el DNS según indique Cloudflare. Hasta ese paso la web de WordPress sigue funcionando.
 
