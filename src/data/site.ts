@@ -8,12 +8,12 @@ export const site = {
   legalName: 'ARQDECO PERÚ EIRL',
   description:
     'Proyectos de arquitectura, licencias de funcionamiento, planos, expedientes técnicos en edificaciones, diseño y dirección de obras civiles en Lima.',
-  phone: '+51 987 166 582',
-  phoneHref: 'tel:+51987166582',
-  whatsapp: 'https://wa.me/51987166582?text=' + encodeURIComponent('Hola Arqdeco, quisiera información sobre sus servicios.'),
+  phone: '+51 922 243 627',
+  phoneHref: 'tel:+51922243627',
+  whatsapp: 'https://wa.me/51922243627?text=' + encodeURIComponent('Hola Arqdeco, quisiera información sobre sus servicios.'),
   email: 'susana@arqdeco.com.pe',
-  address: 'Av. Domingo Orué 520, Surquillo, Lima, Perú',
-  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Av. Domingo Orué 520, Surquillo, Lima, Perú'),
+  address: 'Av. Circunvalacion del Golf Los Incas Nro. 134 Int. 26 Centro Empresarial Panorama Torre 2 Piso 6 Lima - Lima - Santiago de Surco',
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Av. Circunvalacion del Golf Los Incas 134, Santiago de Surco, Lima, Perú'),
   social: {
     facebook: 'https://www.facebook.com/arqdecope/',
     linkedin: 'https://pe.linkedin.com/company/arqdeco-per%C3%BA',
