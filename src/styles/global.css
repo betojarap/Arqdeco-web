@@ -136,14 +136,14 @@ a.card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.
 .norm-list li { break-inside: avoid; margin-bottom: .6em; }
 
 /* Footer */
-.site-footer { background: #161b1e; color: #b8c1c6; padding: 56px 0 28px; font-size: .95rem; }
-.site-footer a { color: #e7eaec; text-decoration: none; }
-.site-footer a:hover { color: #b9e07f; }
+.site-footer { background: #fff; color: var(--ink-soft); border-top: 1px solid var(--line); padding: 56px 0 28px; font-size: .95rem; }
+.site-footer a { color: var(--ink); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
 .footer-grid { display: grid; gap: 32px; grid-template-columns: 2fr 1fr 1.4fr; }
 @media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr; } }
-.site-footer h4 { color: #fff; margin: 0 0 12px; font-size: .95rem; letter-spacing: .08em; text-transform: uppercase; }
+.site-footer h4 { color: var(--accent-dark); margin: 0 0 12px; font-size: .95rem; letter-spacing: .08em; text-transform: uppercase; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
-.footer-bottom { border-top: 1px solid #2b3337; margin-top: 40px; padding-top: 20px; font-size: .85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer-bottom { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 20px; font-size: .85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 .social { display: flex; gap: 12px; margin-top: 12px; }
 
 .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #fff; display: grid; place-items: center; box-shadow: 0 6px 20px rgba(0,0,0,.25); transition: transform .2s; }
@@ -158,7 +158,8 @@ a.card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.
 .skip:focus { left: 12px; top: 12px; background: #fff; padding: 8px 12px; z-index: 100; }
 @media (max-width: 600px) { .card { padding: 22px; } .section { padding: 56px 0; } }
 .brand-logo { height: 44px; width: auto; }
-.footer-logo { display: inline-block; background: #fff; padding: 8px 12px; border-radius: 8px; }
+.footer-logo { display: inline-block; }
+.footer-logo .brand-logo { height: 54px; }
 .feature { display: grid; align-content: start; gap: 18px; text-decoration: none; color: inherit; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 14px 24px; transition: transform .2s, box-shadow .2s; }
 .feature:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.07); }
 .feature > div { padding: 0 10px; }
