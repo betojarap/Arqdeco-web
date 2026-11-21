@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
 import { site, nav, services } from '../data/site';
+import { findLogo } from '../data/images';
+const logo = findLogo();
 
 interface Props { title?: string; description?: string }
 const { title, description = site.description } = Astro.props;
@@ -51,8 +53,7 @@ const jsonLd = {
     <header class="site-header">
       <div class="container">
         <a class="brand" href="/" aria-label={`${site.name}, inicio`}>
-          <span class="brand-mark">A</span>
-          <span>ARQDECO <small>PERÚ</small></span>
+          {logo ? <img class="brand-logo" src={logo} alt={site.name} /> : <><span class="brand-mark">A</span><span>ARQDECO <small>PERÚ</small></span></>}
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
           <Icon name="menu" size={26} />
@@ -75,7 +76,7 @@ const jsonLd = {
       <div class="container">
         <div class="footer-grid">
           <div>
-            <a class="brand" href="/" style="color:#fff"><span class="brand-mark">A</span><span>ARQDECO <small style="color:#b8c1c6">PERÚ</small></span></a>
+            <a class="brand" href="/" style="color:#fff">{logo ? <span class="footer-logo"><img class="brand-logo" src={logo} alt={site.name} /></span> : <><span class="brand-mark">A</span><span>ARQDECO <small style="color:#b8c1c6">PERÚ</small></span></>}</a>
             <p style="margin-top:14px;max-width:42ch">Arquitectura, diseño, construcción y mantenimiento. Expedientes técnicos para Defensa Civil y licencias de funcionamiento desde 2012.</p>
             <div class="social">
               <a href={site.social.facebook} aria-label="Facebook" rel="noopener" target="_blank"><Icon name="facebook" /></a>

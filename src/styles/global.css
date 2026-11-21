@@ -157,3 +157,5 @@ a.card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.
 .skip { position: absolute; left: -9999px; }
 .skip:focus { left: 12px; top: 12px; background: #fff; padding: 8px 12px; z-index: 100; }
 @media (max-width: 600px) { .card { padding: 22px; } .section { padding: 56px 0; } }
+.brand-logo { height: 44px; width: auto; }
+.footer-logo { display: inline-block; background: #fff; padding: 8px 12px; border-radius: 8px; }
