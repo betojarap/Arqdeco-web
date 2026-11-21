@@ -1,0 +1,8 @@
+---
+// Muestra una foto si existe en /public/img; si no, un recuadro de reemplazo con su descripción.
+interface Props { src?: string; alt: string; ratio?: string; class?: string }
+const { src, alt, ratio, class: cls } = Astro.props;
+---
+<div class:list={['photo', cls]} style={ratio ? `aspect-ratio:${ratio}` : undefined}>
+  {src ? <img src={src} alt={alt} loading="lazy" decoding="async" /> : <span class="ph">{alt}</span>}
+</div>

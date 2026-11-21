@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { listImages } from '../data/images';
+const images = listImages('galeria');
+---
+<Base title="Galería" description="Obras, remodelaciones y mantenimientos realizados por Arqdeco Perú.">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:#f0b896">Galería</span>
+      <h1>Nuestros trabajos</h1>
+      <p>Una muestra de obras, remodelaciones y mantenimientos que hemos realizado.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {images.length > 0 ? (
+        <div class="gallery">
+          {images.map((src, i) => (
+            <button type="button" data-full={src} aria-label={`Ampliar foto ${i + 1}`}>
+              <Photo src={src} alt={`Trabajo de Arqdeco, foto ${i + 1}`} />
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div class="gallery">
+          {Array.from({ length: 9 }, (_, i) => <Photo alt={`Foto de obra ${i + 1}`} />)}
+        </div>
+      )}
+      <dialog class="lightbox" id="lightbox"><img alt="" /></dialog>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
+
+<script>
+  const dlg = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const img = dlg?.querySelector('img');
+  document.querySelectorAll<HTMLButtonElement>('.gallery button[data-full]').forEach((b) =>
+    b.addEventListener('click', () => {
+      if (!dlg || !img) return;
+      img.src = b.dataset.full!;
+      dlg.showModal();
+    }),
+  );
+  dlg?.addEventListener('click', () => dlg.close());
+</script>

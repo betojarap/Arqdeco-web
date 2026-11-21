@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import CtaBand from '../components/CtaBand.astro';
+const solutions = [
+  'Visita gratuita de evaluación del proyecto',
+  'Mantenimiento preventivo, correctivo y predictivo',
+  'Suministro de repuestos',
+  'Retrofit (modernización) de equipos',
+  'Herramientas digitales de seguimiento y reportes (Power BI, entre otras)',
+  'Personal propio y soporte técnico 24/7',
+];
+const benefits = [
+  'Continuidad del servicio',
+  'Comunicación permanente',
+  'Personal especializado con protocolos de servicio',
+  'Contratos con garantía',
+  'Personal altamente calificado por especialidad',
+];
+---
+<Base title="Facility Manager" description="Gestión y operación eficiente de la infraestructura: mantenimiento preventivo, correctivo y predictivo con soporte 24/7.">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:#f0b896">Facility Manager</span>
+      <h1>Gestión y operación eficiente de la infraestructura</h1>
+      <p>Un único punto de contacto para la gestión integral de tus instalaciones, a nivel local, nacional e internacional.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid-2">
+      <div>
+        <h2>Nuestra solución</h2>
+        <ul class="check-list">{solutions.map((s) => <li>{s}</li>)}</ul>
+      </div>
+      <Photo alt="Foto de un proyecto de mantenimiento (p. ej. centro comercial)" />
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <h2>Beneficios</h2>
+      <div class="grid grid-3" style="margin-top:24px">
+        {benefits.map((b) => <div class="card"><h3 style="margin:0">{b}</h3></div>)}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { services } from '../data/site';
+---
+<Base title="Servicios" description="Mantenimiento, obras civiles, expedientes técnicos INDECI, tasaciones, licencias de funcionamiento y saneamiento físico legal en Lima.">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:#f0b896">Servicios</span>
+      <h1>Soluciones integrales para tus espacios</h1>
+      <p>Contamos con amplia experiencia en diseños exclusivos, funcionales y de alta calidad, y en los trámites que tu inmueble o negocio necesita.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {services.map((s, i) => (
+        <article class="service-block" id={s.id}>
+          <div class="num">{String(i + 1).padStart(2, '0')}</div>
+          <div>
+            <h2>{s.title}</h2>
+            <p class="lead">{s.short}</p>
+            <ul class="check-list">{s.items.map((it) => <li>{it}</li>)}</ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

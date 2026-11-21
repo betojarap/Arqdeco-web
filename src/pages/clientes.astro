@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { listImages } from '../data/images';
+const logos = listImages('clientes');
+---
+<Base title="Clientes" description="Empresas que confían en Arqdeco Perú para sus proyectos, mantenimientos y trámites.">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:#f0b896">Clientes</span>
+      <h1>Empresas que confían en nosotros</h1>
+      <p>Hemos trabajado con empresas de distintos sectores en Lima y provincias.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="logos">
+        {logos.length > 0
+          ? logos.map((src) => <div class="logo-tile"><img src={src} alt="Logo de cliente" loading="lazy" /></div>)
+          : Array.from({ length: 9 }, (_, i) => <div class="logo-tile">Logo cliente {i + 1}</div>)}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

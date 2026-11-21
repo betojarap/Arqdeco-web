@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+const norms = [
+  'Ley N.º 29783, Ley de Seguridad y Salud en el Trabajo, y su reglamento',
+  'D.S. N.º 009-2005-TR, Reglamento de Seguridad y Salud en el Trabajo',
+  'Reglamento Nacional de Edificaciones (RNE)',
+  'Código Nacional de Electricidad',
+  'Reglamentos de seguridad en minería, hidrocarburos y GLP',
+  'Normas del SINADECI – INDECI',
+  'NTP 350.043-1: Extintores portátiles. Selección, distribución, inspección, mantenimiento, recarga y prueba hidrostática',
+  'NTP 399.010-1: Señales de seguridad. Colores, símbolos, formas y dimensiones',
+  'Demás Normas Técnicas Peruanas aplicables a extintores y señalización de seguridad',
+];
+---
+<Base title="Normativa" description="Normas que aplicamos en nuestros proyectos: RNE, Ley 29783, Código Nacional de Electricidad, INDECI y Normas Técnicas Peruanas.">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:#f0b896">Normativa</span>
+      <h1>Trabajamos bajo la normativa vigente</h1>
+      <p>Cada proyecto, mantenimiento y expediente que elaboramos cumple con las normas de seguridad y construcción del Perú.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <ul class="norm-list">{norms.map((n) => <li>{n}</li>)}</ul>
+      <blockquote class="card" style="margin:40px 0 0;font-size:1.2rem;border-left:4px solid var(--accent)">
+        La prevención de accidentes no es solo nuestro trabajo, es nuestra forma de vida.
+      </blockquote>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
