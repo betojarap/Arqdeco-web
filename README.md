@@ -34,7 +34,7 @@ El sitio está conectado a Cloudflare Workers Builds. `wrangler.jsonc` le dice a
 
 - **Cada rama o PR** genera una vista previa con su propia dirección `*.workers.dev`. El enlace aparece en el PR de GitHub, en la revisión "Workers Builds". Úsala para revisar los cambios antes de publicarlos.
 - **Al fusionar en `main`** el cambio se publica en el sitio principal.
-- En Cloudflare (**Settings → Build → Previews Base**) el *Preview command* debe ser `npx wrangler versions upload`. El antiguo `npx wrangler preview` ya no existe y hace fallar las vistas previas.
+- Las ramas de prueba se publican con `npx wrangler preview` (Cloudflare → Settings → Build → Previews Base). Ese comando necesita el bloque `"previews": {}` en `wrangler.jsonc`.
 - Formulario de contacto: usa Web3Forms (https://web3forms.com). La clave está en `src/data/site.ts` (`web3formsKey`); el correo que recibe los mensajes se cambia desde el panel de Web3Forms.
 - Analítica: Cloudflare → Analytics & Logs → Web Analytics → Add a site. Copia el token en `src/data/site.ts` (`cfAnalyticsToken`).
 - Dominio: en el Worker, **Settings → Domains & Routes** → añadir `www.arqdeco.com.pe` y `arqdeco.com.pe`, y redirigir `arqdeco.com.pe` a `www`. Antes de cambiar el DNS, copiar los registros de correo (MX, SPF, DKIM) del hosting actual.
