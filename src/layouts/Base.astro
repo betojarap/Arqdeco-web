@@ -1,33 +1,96 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
-import { site, nav, services } from '../data/site';
+import { site, nav, services, FOUNDED } from '../data/site';
 import { findLogo } from '../data/images';
 const logo = findLogo();
 
-interface Props { title?: string; description?: string }
-const { title, description = site.description } = Astro.props;
+interface Props {
+  title?: string;
+  description?: string;
+  /** Imagen para compartir en WhatsApp/redes (ruta en /public). */
+  image?: string;
+  imageAlt?: string;
+  /** Imagen principal de la página: se precarga para que aparezca antes. */
+  preloadImage?: string;
+  /** true en páginas que no deben salir en Google (p. ej. 404). */
+  noindex?: boolean;
+}
+const {
+  title,
+  description = site.description,
+  image = '/img/og-arqdeco.jpg',
+  imageAlt = `${site.name}: arquitectura, construcción y mantenimiento en Lima`,
+  preloadImage,
+  noindex = false,
+} = Astro.props;
 const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | Arquitectura, construcción y licencias en Lima`;
 const path = Astro.url.pathname;
 const canonical = new URL(path, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+const siteUrl = Astro.site!.href;
 const year = new Date().getFullYear();
 
+// Datos estructurados (Schema.org). Google y los buscadores con IA los leen para
+// entender quién es la empresa, dónde está y qué ofrece. Solo datos reales del sitio.
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: site.legalName,
-  url: Astro.site?.href,
-  telephone: site.phone,
-  email: site.email,
-  foundingDate: '2012',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Av. Circunvalación del Golf Los Incas 134, Int. 26, Centro Empresarial Panorama Torre 2, Piso 6',
-    addressLocality: 'Santiago de Surco',
-    addressRegion: 'Lima',
-    addressCountry: 'PE',
-  },
-  sameAs: Object.values(site.social),
+  '@graph': [
+    {
+      '@type': 'GeneralContractor',
+      '@id': `${siteUrl}#empresa`,
+      name: site.name,
+      legalName: site.legalName,
+      description: site.description,
+      url: siteUrl,
+      logo: logo ? new URL(logo, Astro.site).href : undefined,
+      image: ogImage,
+      telephone: site.phone,
+      email: site.email,
+      foundingDate: String(FOUNDED),
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: site.streetAddress,
+        addressLocality: 'Santiago de Surco',
+        addressRegion: 'Lima',
+        addressCountry: 'PE',
+      },
+      hasMap: site.mapsUrl,
+      areaServed: [
+        { '@type': 'City', name: 'Lima' },
+        { '@type': 'Country', name: 'Perú' },
+      ],
+      knowsAbout: [
+        'Arquitectura', 'Construcción', 'Remodelación de oficinas', 'Mantenimiento de edificaciones',
+        'Facility management', 'Inspección Técnica de Seguridad en Edificaciones (ITSE)',
+        'Certificado de Defensa Civil', 'Licencias de funcionamiento', 'Licencias de edificación',
+        'Tasaciones', 'Saneamiento físico legal',
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Servicios',
+        itemListElement: services.map((s) => ({
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: s.title,
+            description: s.short,
+            url: `${siteUrl}servicios/#${s.id}`,
+            areaServed: 'Lima, Perú',
+          },
+        })),
+      },
+      sameAs: Object.values(site.social),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}#sitio`,
+      url: siteUrl,
+      name: site.name,
+      inLanguage: 'es-PE',
+      publisher: { '@id': `${siteUrl}#empresa` },
+    },
+  ],
 };
 ---
 <!doctype html>
@@ -37,10 +100,13 @@ const jsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta name="theme-color" content="#20272b" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_PE" />
@@ -48,6 +114,15 @@ const jsonLd = {
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>

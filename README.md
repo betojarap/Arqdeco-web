@@ -9,7 +9,9 @@ Sitio web de [www.arqdeco.com.pe](https://www.arqdeco.com.pe), hecho con [Astro]
 | Teléfono, correo, dirección, redes sociales | `src/data/site.ts` |
 | Lista de servicios y su detalle | `src/data/site.ts` (`services`) |
 | Textos de cada página | `src/pages/*.astro` |
-| Fotos de la galería | Subir a `public/img/galeria/` (aparecen solas, en orden alfabético) |
+| Fotos de la galería | Subir a `public/img/galeria/` (aparecen solas, en orden alfabético). Mejor en formato `.webp` |
+| Descripción (alt) de cada foto o logo | `src/data/captions.ts` |
+| Título y descripción para Google de cada página | Atributos `title` y `description` de `<Base>` en `src/pages/*.astro` |
 | Logos de clientes | Subir a `public/img/clientes/` |
 | Logo | Subir `public/img/logo.png` (o `logo.svg`) |
 | Colores y estilos | `src/styles/global.css` (variables al inicio) |
@@ -38,6 +40,13 @@ npm run build    # genera el sitio en dist/
 4. Formulario de contacto: usa Web3Forms (https://web3forms.com). La clave está en `src/data/site.ts` (`web3formsKey`); para cambiar el correo que recibe los mensajes, se gestiona desde el panel de Web3Forms.
 5. Revisar la dirección de prueba `*.pages.dev`.
 6. Cuando todo esté aprobado: **Custom domains** → añadir `www.arqdeco.com.pe` y `arqdeco.com.pe`, y actualizar el DNS según indique Cloudflare. Hasta ese paso la web de WordPress sigue funcionando.
+
+## Google y búsqueda con IA
+
+- Cada página tiene su título, descripción, imagen para compartir (`public/img/og-arqdeco.jpg`) y datos estructurados de Schema.org (en `src/layouts/Base.astro`).
+- `sitemap.xml` se genera solo a partir del menú; `public/robots.txt` lo anuncia.
+- `public/llms.txt` resume la empresa para asistentes de IA. Actualízalo si cambian los servicios o el contacto.
+- Tras publicar, dar de alta el sitio en Google Search Console y enviar `https://www.arqdeco.com.pe/sitemap.xml`.
 
 ## Seguridad
 

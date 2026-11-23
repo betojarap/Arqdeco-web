@@ -2,10 +2,11 @@
 import Base from '../layouts/Base.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { listImages } from '../data/images';
+import { caption } from '../data/captions';
 const logos = listImages('clientes');
 ---
-<Base title="Clientes" description="Empresas que confían en Arqdeco Perú para sus proyectos, mantenimientos y trámites.">
-  <section class="page-hero" style="--hero-img:url(/img/galeria/gal-14.jpg)">
+<Base title="Clientes: empresas que confían en Arqdeco" description="Empresas que confían en Arqdeco Perú para sus proyectos, mantenimientos y trámites.">
+  <section class="page-hero" style="--hero-img:url(/img/galeria/gal-14.webp)">
     <div class="container">
       <span class="eyebrow" style="color:#b9e07f">Clientes</span>
       <h1>Empresas que confían en nosotros</h1>
@@ -17,7 +18,7 @@ const logos = listImages('clientes');
     <div class="container">
       <div class="logos">
         {logos.length > 0
-          ? logos.map((src) => <div class="logo-tile"><img src={src} alt="Logo de cliente" loading="lazy" /></div>)
+          ? logos.map((src) => <div class="logo-tile"><img src={src} alt={caption(src, 'Logo de cliente')} loading="lazy" decoding="async" /></div>)
           : Array.from({ length: 9 }, (_, i) => <div class="logo-tile">Logo cliente {i + 1}</div>)}
       </div>
     </div>
