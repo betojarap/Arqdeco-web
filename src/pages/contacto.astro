@@ -47,6 +47,7 @@ const formKey = import.meta.env.PUBLIC_WEB3FORMS_KEY || site.web3formsKey;
             </select>
           </label>
           <label>Mensaje<textarea name="message" rows="5" required></textarea></label>
+          <label class="consent"><input type="checkbox" name="consentimiento" value="Acepta la política de privacidad" required /><span>Acepto la <a href="/privacidad/" target="_blank">política de privacidad</a> y autorizo el uso de mis datos para responder mi consulta.</span></label>
           <button class="btn" type="submit">Enviar mensaje</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>

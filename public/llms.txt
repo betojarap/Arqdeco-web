@@ -1,6 +1,6 @@
 # Arqdeco Perú
 
-> ARQDECO PERÚ EIRL es una empresa de Lima, Perú, fundada en 2012, que ofrece arquitectura, construcción, remodelación y mantenimiento de oficinas, viviendas y locales comerciales, además de expedientes técnicos para Defensa Civil (ITSE), licencias de funcionamiento y de edificación, tasaciones y saneamiento físico legal de inmuebles.
+> ARQDECO PERÚ EIRL es una empresa de Lima, Perú, fundada en 2012, especializada en el Certificado ITSE (Defensa Civil) y las licencias de funcionamiento, incluidas las obras que pide la inspección. También ofrece arquitectura, construcción, remodelación y mantenimiento de oficinas, viviendas y locales comerciales, además de licencias de edificación, tasaciones y saneamiento físico legal de inmuebles.
 
 - Oficina: Av. Circunvalación del Golf Los Incas 134, Int. 26, Centro Empresarial Panorama Torre 2, Piso 6, Santiago de Surco, Lima.
 - Teléfono y WhatsApp: +51 922 243 627
@@ -9,10 +9,11 @@
 
 ## Páginas
 
+- [Certificado ITSE y licencia de funcionamiento](https://www.arqdeco.com.pe/certificado-itse/): especialidad de la empresa. Diagnóstico del local, expediente técnico, obras para levantar observaciones (tableros, pozo a tierra, señalización, extintores, luces de emergencia) y seguimiento hasta obtener el Certificado ITSE (antes llamado de Defensa Civil) y la licencia de funcionamiento.
 - [Servicios](https://www.arqdeco.com.pe/servicios/): mantenimiento y servicios generales, anteproyectos y obras civiles, expedientes técnicos INDECI, tasaciones, licencias de funcionamiento y saneamiento físico legal.
 - [Facility Manager](https://www.arqdeco.com.pe/facility-manager/): gestión y mantenimiento preventivo, correctivo y predictivo de la infraestructura, con soporte 24/7.
 - [Nosotros](https://www.arqdeco.com.pe/nosotros/): historia y equipo de la empresa.
-- [Normativa](https://www.arqdeco.com.pe/normativas/): normas que se aplican (RNE, Ley 29783, Código Nacional de Electricidad, INDECI, NTP).
+- [Normativa](https://www.arqdeco.com.pe/normativas/): normas que se aplican (Reglamento ITSE D.S. 002-2018-PCM, Ley 28976 de licencia de funcionamiento, RNE, Código Nacional de Electricidad, Ley 29783, NTP).
 - [Galería](https://www.arqdeco.com.pe/galeria/): fotos de obras y mantenimientos realizados.
 - [Clientes](https://www.arqdeco.com.pe/clientes/): empresas que han trabajado con Arqdeco.
 - [Contacto](https://www.arqdeco.com.pe/contacto/): formulario, teléfono, WhatsApp y dirección.

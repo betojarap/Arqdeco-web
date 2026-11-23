@@ -7,11 +7,16 @@ export const site = {
   name: 'Arqdeco Perú',
   legalName: 'ARQDECO PERÚ EIRL',
   description:
-    'Proyectos de arquitectura, licencias de funcionamiento, planos, expedientes técnicos en edificaciones, diseño y dirección de obras civiles en Lima.',
+    'Certificado ITSE (Defensa Civil) y licencias de funcionamiento en Lima: expedientes técnicos, planos y las obras para levantar observaciones, con un solo equipo.',
   phone: '+51 922 243 627',
   phoneHref: 'tel:+51922243627',
   whatsapp: 'https://wa.me/51922243627?text=' + encodeURIComponent('Hola Arqdeco, quisiera información sobre sus servicios.'),
+  // WhatsApp con el mensaje ya escrito para el trámite ITSE / licencia.
+  whatsappItse: 'https://wa.me/51922243627?text=' + encodeURIComponent('Hola Arqdeco, quiero evaluar mi local para obtener el Certificado ITSE y la licencia de funcionamiento.'),
   email: 'susana@arqdeco.com.pe',
+  // Token de Cloudflare Web Analytics (Cloudflare → Analytics & Logs → Web Analytics → Add a site).
+  // Déjalo vacío si activas la analítica automática de Cloudflare en el dominio.
+  cfAnalyticsToken: '',
   // Clave pública de Web3Forms para el formulario de contacto (no es secreta).
   web3formsKey: 'e1d3c64f-c7ab-4694-a053-ed0b19c4ce1a',
   // Dirección para Google (datos estructurados): calle y número, sin distrito.
@@ -27,6 +32,7 @@ export const site = {
 
 export const nav = [
   { href: '/', label: 'Inicio' },
+  { href: '/certificado-itse/', label: 'ITSE y licencias' },
   { href: '/nosotros/', label: 'Nosotros' },
   { href: '/servicios/', label: 'Servicios' },
   { href: '/facility-manager/', label: 'Facility Manager' },
@@ -39,6 +45,48 @@ export const nav = [
 export type Service = { id: string; title: string; short: string; image: string; items: string[] };
 
 export const services: Service[] = [
+  {
+    id: 'expedientes-tecnicos',
+    image: '/img/galeria/gal-03.webp',
+    title: 'Certificado ITSE (Defensa Civil)',
+    short: 'Expediente, obras y acompañamiento hasta obtener tu Certificado de Inspección Técnica de Seguridad en Edificaciones.',
+    items: [
+      'Elaboración de expedientes técnicos para ITSE',
+      'Diagnóstico del local según su nivel de riesgo',
+      'Señalización, extintores, luces de emergencia y equipos de seguridad',
+      'Levantamiento de observaciones de la inspección',
+      'Trabajos eléctricos: tableros, pozo a tierra y protocolos',
+      'Seguimiento del trámite ante la municipalidad hasta obtener el Certificado ITSE',
+      'Plan de contingencia',
+      'Capacitación en primeros auxilios, simulacro de evacuación y uso de extintores',
+    ],
+  },
+  {
+    id: 'licencias',
+    image: '/img/galeria/gal-17.webp',
+    title: 'Licencias de funcionamiento',
+    short: 'Preparamos y tramitamos tu expediente ante la municipalidad, junto con el ITSE que corresponda.',
+    items: [
+      'Elaboración del expediente para la licencia de funcionamiento',
+      'Trámite ante la municipalidad',
+      'Cambio de uso cuando sea necesario',
+    ],
+  },
+  {
+    id: 'anteproyectos',
+    image: '/img/galeria/gal-16.webp',
+    title: 'Anteproyectos y obras civiles',
+    short: 'Planos, presupuestos, licencias de edificación, ejecución y supervisión de obra.',
+    items: [
+      'Planos de arquitectura, instalaciones eléctricas y sanitarias',
+      'Cronograma y presupuesto de obra',
+      'Trámite de expedientes para licencia de edificación',
+      'Ejecución de obras civiles',
+      'Asesoría en materiales',
+      'Supervisión de obras civiles',
+      'Topografía',
+    ],
+  },
   {
     id: 'servicios-generales',
     image: '/img/galeria/gal-04.webp',
@@ -58,36 +106,6 @@ export const services: Service[] = [
     ],
   },
   {
-    id: 'anteproyectos',
-    image: '/img/galeria/gal-16.webp',
-    title: 'Anteproyectos y obras civiles',
-    short: 'Planos, presupuestos, licencias de edificación, ejecución y supervisión de obra.',
-    items: [
-      'Planos de arquitectura, instalaciones eléctricas y sanitarias',
-      'Cronograma y presupuesto de obra',
-      'Trámite de expedientes para licencia de edificación',
-      'Ejecución de obras civiles',
-      'Asesoría en materiales',
-      'Supervisión de obras civiles',
-      'Topografía',
-    ],
-  },
-  {
-    id: 'expedientes-tecnicos',
-    image: '/img/galeria/gal-03.webp',
-    title: 'Expedientes técnicos (INDECI – Defensa Civil)',
-    short: 'Te acompañamos hasta obtener tu Certificado de Inspección Técnica de Seguridad en Edificaciones.',
-    items: [
-      'Elaboración de expedientes técnicos para ITSE',
-      'Asesoría en los requisitos de INDECI',
-      'Equipos de seguridad y certificados',
-      'Seguimiento del trámite hasta obtener el Certificado de Defensa Civil',
-      'Trabajos eléctricos',
-      'Plan de contingencia',
-      'Capacitación en primeros auxilios, simulacro de evacuación y uso de extintores',
-    ],
-  },
-  {
     id: 'tasaciones',
     image: '/img/galeria/gal-08.webp',
     title: 'Tasaciones',
@@ -97,17 +115,6 @@ export const services: Service[] = [
       'Inspección en campo y trabajo en gabinete',
       'Atención en Lima y provincias',
       'Según el Reglamento Nacional de Tasaciones (RM N.º 172-2016-VIVIENDA)',
-    ],
-  },
-  {
-    id: 'licencias',
-    image: '/img/galeria/gal-17.webp',
-    title: 'Licencias de funcionamiento',
-    short: 'Preparamos y tramitamos tu expediente ante la municipalidad.',
-    items: [
-      'Elaboración del expediente para la licencia de funcionamiento',
-      'Trámite ante la municipalidad',
-      'Cambio de uso cuando sea necesario',
     ],
   },
   {
