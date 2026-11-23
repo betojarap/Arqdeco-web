@@ -4,17 +4,40 @@ import Photo from '../components/Photo.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { site, services, yearsOfExperience } from '../data/site';
 const years = yearsOfExperience();
+const steps = [
+  { title: 'Diagnóstico del local', text: 'Visitamos tu local, revisamos su nivel de riesgo y te decimos qué falta para pasar la inspección.' },
+  { title: 'Expediente y planos', text: 'Preparamos planos, memoria descriptiva y los documentos que pide la municipalidad.' },
+  { title: 'Obras y equipos', text: 'Ejecutamos las mejoras: instalaciones eléctricas, señalización, extintores, luces de emergencia y rutas de evacuación.' },
+  { title: 'Inspección y certificado', text: 'Te acompañamos en la inspección y en el trámite hasta tener tu Certificado ITSE y tu licencia.' },
+];
 ---
 <Base preloadImage="/img/portada.webp">
   <section class="hero" style="--hero-img:url(/img/portada.webp)">
     <div class="container">
-      <span class="eyebrow" style="color:#b9e07f">Arquitectura · Construcción · Licencias</span>
-      <h1>Contamos con la experiencia que tus proyectos necesitan.</h1>
-      <p class="lead">Servicios de arquitectura, diseño, construcción y mantenimiento en Lima. Te acompañamos desde el plano hasta el Certificado de Defensa Civil y la licencia de funcionamiento.</p>
+      <span class="eyebrow" style="color:#b9e07f">Certificado ITSE · Defensa Civil · Licencia de funcionamiento</span>
+      <h1>Obtén tu Certificado ITSE y tu licencia de funcionamiento sin observaciones.</h1>
+      <p class="lead">Evaluamos tu local, preparamos el expediente y hacemos las obras que pide la inspección: tableros eléctricos, pozo a tierra, señalización, extintores y más. Un solo equipo desde el diagnóstico hasta el certificado.</p>
       <div class="actions">
-        <a class="btn" href="/contacto/">Solicitar cotización</a>
-        <a class="btn ghost" href="/servicios/">Ver servicios</a>
+        <a class="btn" href={site.whatsappItse} target="_blank" rel="noopener">Evalúa tu local por WhatsApp</a>
+        <a class="btn ghost" href="/certificado-itse/">Cómo funciona el trámite</a>
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>Del diagnóstico al certificado, sin vueltas</h2>
+      <div class="steps" style="margin-top:32px">
+        {steps.map((st, i) => (
+          <div class="step">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{st.title}</h3>
+            <p>{st.text}</p>
+          </div>
+        ))}
+      </div>
+      <div class="actions"><a class="btn ghost" href="/certificado-itse/" style="color:var(--accent-dark)">Ver el proceso completo</a></div>
     </div>
   </section>
 
@@ -22,7 +45,7 @@ const years = yearsOfExperience();
     <div class="container">
       <span class="eyebrow">Qué hacemos</span>
       <h2>Nuestros servicios</h2>
-      <p class="lead">Un solo equipo para diseñar, construir, mantener y regularizar tus espacios.</p>
+      <p class="lead">Nuestra especialidad es que tu negocio pueda abrir y operar en regla. Además diseñamos, construimos y mantenemos tus espacios.</p>
       <div class="grid grid-3" style="margin-top:32px">
         {services.map((s, i) => (
           <a class="card" href={`/servicios/#${s.id}`}>
@@ -37,20 +60,20 @@ const years = yearsOfExperience();
 
   <section class="section" style="padding-top:0">
     <div class="container grid grid-2" style="align-items:stretch">
+      <a class="feature" href="/certificado-itse/">
+        <Photo src="/img/expediente.webp" alt="Planos y lista de inspección de seguridad sobre un escritorio" ratio="16 / 10" />
+        <div>
+          <span class="eyebrow">Trámites y licencias</span>
+          <h3>Del plano a la licencia</h3>
+          <p>Preparamos expedientes técnicos y te acompañamos hasta obtener tu Certificado ITSE y tu licencia de funcionamiento.</p>
+        </div>
+      </a>
       <a class="feature" href="/servicios/#servicios-generales">
         <Photo src="/img/remodelacion.webp" alt="Oficina corporativa remodelada" ratio="16 / 10" />
         <div>
           <span class="eyebrow">Diseño y construcción</span>
           <h3>Espacios que funcionan</h3>
           <p>Remodelamos oficinas, locales y viviendas con acabados de calidad, desde el diseño hasta la entrega.</p>
-        </div>
-      </a>
-      <a class="feature" href="/servicios/#expedientes-tecnicos">
-        <Photo src="/img/expediente.webp" alt="Planos y lista de inspección de seguridad sobre un escritorio" ratio="16 / 10" />
-        <div>
-          <span class="eyebrow">Trámites y licencias</span>
-          <h3>Del plano a la licencia</h3>
-          <p>Preparamos expedientes técnicos y te acompañamos hasta obtener tu Certificado de Defensa Civil y tu licencia de funcionamiento.</p>
         </div>
       </a>
     </div>

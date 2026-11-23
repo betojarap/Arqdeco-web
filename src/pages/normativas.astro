@@ -2,19 +2,42 @@
 import Base from '../layouts/Base.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Photo from '../components/Photo.astro';
-const norms = [
-  'Ley N.º 29783, Ley de Seguridad y Salud en el Trabajo, y su reglamento',
-  'D.S. N.º 009-2005-TR, Reglamento de Seguridad y Salud en el Trabajo',
-  'Reglamento Nacional de Edificaciones (RNE)',
-  'Código Nacional de Electricidad',
-  'Reglamentos de seguridad en minería, hidrocarburos y GLP',
-  'Normas del SINADECI – INDECI',
-  'NTP 350.043-1: Extintores portátiles. Selección, distribución, inspección, mantenimiento, recarga y prueba hidrostática',
-  'NTP 399.010-1: Señales de seguridad. Colores, símbolos, formas y dimensiones',
-  'Demás Normas Técnicas Peruanas aplicables a extintores y señalización de seguridad',
+const groups = [
+  {
+    title: 'ITSE y licencias de funcionamiento',
+    items: [
+      'D.S. N.º 002-2018-PCM, Reglamento de Inspecciones Técnicas de Seguridad en Edificaciones (ITSE)',
+      'Ley N.º 28976, Ley Marco de Licencia de Funcionamiento, y su Texto Único Ordenado (D.S. N.º 163-2020-PCM)',
+      'Manual para la Ejecución de Inspecciones Técnicas de Seguridad en Edificaciones (CENEPRED)',
+      'Ley N.º 29664, Ley del Sistema Nacional de Gestión del Riesgo de Desastres (SINAGERD), y su reglamento',
+    ],
+  },
+  {
+    title: 'Edificación e instalaciones',
+    items: [
+      'Reglamento Nacional de Edificaciones (RNE), en especial la Norma A.130, Requisitos de seguridad',
+      'Código Nacional de Electricidad – Utilización',
+      'Reglamentos de seguridad en minería, hidrocarburos y GLP',
+    ],
+  },
+  {
+    title: 'Seguridad y salud en el trabajo',
+    items: [
+      'Ley N.º 29783, Ley de Seguridad y Salud en el Trabajo',
+      'D.S. N.º 005-2012-TR, Reglamento de la Ley de Seguridad y Salud en el Trabajo',
+    ],
+  },
+  {
+    title: 'Equipos y señalización',
+    items: [
+      'NTP 350.043-1: Extintores portátiles. Selección, distribución, inspección, mantenimiento, recarga y prueba hidrostática',
+      'NTP 399.010-1: Señales de seguridad. Colores, símbolos, formas y dimensiones',
+      'Demás Normas Técnicas Peruanas aplicables a extintores y señalización de seguridad',
+    ],
+  },
 ];
 ---
-<Base title="Normativa técnica: RNE, INDECI y CNE" description="Normas que aplicamos en nuestros proyectos: RNE, Ley 29783, Código Nacional de Electricidad, INDECI y Normas Técnicas Peruanas.">
+<Base title="Normativa ITSE, licencias, RNE y seguridad" description="Normas que aplicamos: Reglamento ITSE (D.S. 002-2018-PCM), Ley 28976 de licencia de funcionamiento, RNE, Código Nacional de Electricidad, Ley 29783 y Normas Técnicas Peruanas.">
   <section class="page-hero" style="--hero-img:url(/img/galeria/IMG-20180824-WA0075.webp)">
     <div class="container">
       <span class="eyebrow" style="color:#b9e07f">Normativa</span>
@@ -26,7 +49,14 @@ const norms = [
   <section class="section">
     <div class="container">
       <div class="grid grid-2" style="align-items:start">
-        <ul class="norm-list" style="columns:1;margin:0">{norms.map((n) => <li>{n}</li>)}</ul>
+        <div>
+          {groups.map((g) => (
+            <>
+              <h2 style="font-size:1.2rem;margin:0 0 .6em">{g.title}</h2>
+              <ul class="norm-list" style="columns:1;margin:0 0 28px">{g.items.map((n) => <li>{n}</li>)}</ul>
+            </>
+          ))}
+        </div>
         <div class="grid" style="gap:16px">
           <Photo src="/img/galeria/gal-06.webp" alt="Instalación de señalización de seguridad y tableros eléctricos" />
           <Photo src="/img/galeria/IMG-20180824-WA0071.webp" alt="Capacitación en primeros auxilios" />

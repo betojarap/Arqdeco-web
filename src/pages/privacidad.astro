@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+const updated = '23 de noviembre de 2026';
+---
+<Base title="Política de privacidad" description="Cómo Arqdeco Perú trata los datos personales que nos envías por el formulario de contacto, WhatsApp o correo, según la Ley N.º 29733.">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:#b9e07f">Datos personales</span>
+      <h1>Política de privacidad</h1>
+      <p>Última actualización: {updated}.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <p>En {site.legalName} cuidamos los datos personales que nos confías. Esta política explica qué datos recogemos en este sitio web, para qué los usamos y cómo puedes ejercer tus derechos, de acuerdo con la Ley N.º 29733, Ley de Protección de Datos Personales, y su reglamento.</p>
+
+      <h2>1. Quién es responsable de tus datos</h2>
+      <p>{site.legalName}, con domicilio en {site.address}. Puedes escribirnos a <a href={`mailto:${site.email}`}>{site.email}</a> o llamarnos al <a href={site.phoneHref}>{site.phone}</a>.</p>
+
+      <h2>2. Qué datos recogemos</h2>
+      <p>Solo los que tú nos envías por el formulario de contacto, WhatsApp o correo: nombre, correo electrónico, teléfono, el servicio que te interesa y el contenido de tu mensaje. No pedimos datos sensibles.</p>
+      <p>Para medir las visitas usamos Cloudflare Web Analytics, que cuenta páginas vistas de forma agregada, sin cookies y sin identificar a las personas.</p>
+
+      <h2>3. Para qué los usamos</h2>
+      <ul class="check-list">
+        <li>Responder tu consulta y enviarte la cotización que pediste.</li>
+        <li>Coordinar visitas, diagnósticos y la ejecución del servicio que contrates.</li>
+      </ul>
+      <p>No usamos tus datos para enviarte publicidad sin tu permiso, y no los vendemos ni los cedemos a terceros.</p>
+
+      <h2>4. Quién más puede tratarlos</h2>
+      <p>Para que este sitio funcione usamos proveedores que tratan los datos por encargo nuestro y solo para ese fin: Cloudflare, que aloja el sitio, y Web3Forms, que entrega los mensajes del formulario a nuestro correo. Estos proveedores pueden estar fuera del Perú, por lo que al enviar el formulario se realiza una transferencia internacional de datos con ese único propósito.</p>
+
+      <h2>5. Cuánto tiempo los guardamos</h2>
+      <p>Mientras sea necesario para atender tu consulta y, si nos contratas, durante la relación comercial y los plazos que exige la ley. Si no llegamos a trabajar juntos, eliminamos tus datos en un plazo máximo de dos años.</p>
+
+      <h2>6. Tus derechos</h2>
+      <p>Puedes pedir en cualquier momento acceder a tus datos, corregirlos, cancelarlos u oponerte a su uso (derechos ARCO), y retirar tu consentimiento. Escríbenos a <a href={`mailto:${site.email}`}>{site.email}</a> indicando tu nombre y lo que solicitas; te responderemos dentro de los plazos de ley. Si consideras que no atendimos tu pedido, puedes acudir a la Autoridad Nacional de Protección de Datos Personales del Ministerio de Justicia y Derechos Humanos.</p>
+
+      <h2>7. Seguridad</h2>
+      <p>El sitio funciona siempre con conexión cifrada (https) y aplicamos medidas razonables para proteger tus datos frente a accesos no autorizados.</p>
+
+      <h2>8. Cambios a esta política</h2>
+      <p>Si cambiamos esta política, publicaremos la nueva versión en esta página con su fecha de actualización.</p>
+    </div>
+  </section>
+</Base>

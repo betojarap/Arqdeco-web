@@ -1,6 +1,6 @@
 # Web de Arqdeco Perú
 
-Sitio web de [www.arqdeco.com.pe](https://www.arqdeco.com.pe), hecho con [Astro](https://astro.build) como sitio estático (sin base de datos ni panel de administración) y publicado gratis en Cloudflare Pages.
+Sitio web de [www.arqdeco.com.pe](https://www.arqdeco.com.pe), hecho con [Astro](https://astro.build) como sitio estático (sin base de datos ni panel de administración) y publicado gratis en Cloudflare Workers (configuración en `wrangler.jsonc`).
 
 ## Cómo editar el contenido
 
@@ -28,18 +28,15 @@ npm run dev      # vista previa en http://localhost:4321
 npm run build    # genera el sitio en dist/
 ```
 
-## Publicar en Cloudflare Pages (gratis)
+## Publicar en Cloudflare Workers (gratis)
 
-1. Crear una cuenta en https://dash.cloudflare.com.
-2. **Workers & Pages → Create → Pages → Connect to Git** y elegir este repositorio.
-3. Configuración de compilación:
-   - Framework preset: **Astro**
-   - Build command: `npm run build`
-   - Build output directory: `dist`
-   - Variable de entorno `NODE_VERSION` = `22`
-4. Formulario de contacto: usa Web3Forms (https://web3forms.com). La clave está en `src/data/site.ts` (`web3formsKey`); para cambiar el correo que recibe los mensajes, se gestiona desde el panel de Web3Forms.
-5. Revisar la dirección de prueba `*.pages.dev`.
-6. Cuando todo esté aprobado: **Custom domains** → añadir `www.arqdeco.com.pe` y `arqdeco.com.pe`, y actualizar el DNS según indique Cloudflare. Hasta ese paso la web de WordPress sigue funcionando.
+El sitio está conectado a Cloudflare Workers Builds. `wrangler.jsonc` le dice a Cloudflare que publique la carpeta `dist/`.
+
+- **Cada rama o PR** genera una vista previa con su propia dirección `*.workers.dev`. El enlace aparece en el PR de GitHub, en la revisión "Workers Builds". Úsala para revisar los cambios antes de publicarlos.
+- **Al fusionar en `main`** el cambio se publica en el sitio principal.
+- Formulario de contacto: usa Web3Forms (https://web3forms.com). La clave está en `src/data/site.ts` (`web3formsKey`); el correo que recibe los mensajes se cambia desde el panel de Web3Forms.
+- Analítica: Cloudflare → Analytics & Logs → Web Analytics → Add a site. Copia el token en `src/data/site.ts` (`cfAnalyticsToken`).
+- Dominio: en el Worker, **Settings → Domains & Routes** → añadir `www.arqdeco.com.pe` y `arqdeco.com.pe`, y redirigir `arqdeco.com.pe` a `www`. Antes de cambiar el DNS, copiar los registros de correo (MX, SPF, DKIM) del hosting actual.
 
 ## Google y búsqueda con IA
 

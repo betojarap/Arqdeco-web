@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Photo from '../components/Photo.astro';
+import { site } from '../data/site';
+
+const steps = [
+  { title: 'Diagnóstico del local', text: 'Visitamos tu local, identificamos el giro y el nivel de riesgo, y te entregamos la lista de lo que falta para pasar la inspección.' },
+  { title: 'Presupuesto claro', text: 'Te decimos qué trabajos son necesarios, cuánto cuestan y en qué orden conviene hacerlos.' },
+  { title: 'Expediente técnico', text: 'Elaboramos los planos (arquitectura, eléctricos, señalización y evacuación), la memoria descriptiva y el plan de seguridad.' },
+  { title: 'Obras y equipamiento', text: 'Ejecutamos las mejoras con nuestro propio equipo: instalaciones eléctricas, pozo a tierra, señalización, extintores y luces de emergencia.' },
+  { title: 'Inspección', text: 'Te acompañamos el día de la inspección municipal y, si hay observaciones, las levantamos.' },
+  { title: 'Certificado y licencia', text: 'Hacemos el seguimiento hasta que tengas tu Certificado ITSE y tu licencia de funcionamiento.' },
+];
+
+const works = [
+  'Tableros eléctricos con diagrama unifilar, interruptores diferenciales y rotulado',
+  'Pozo a tierra con su protocolo de medición',
+  'Señalización de seguridad y rutas de evacuación',
+  'Extintores, luces de emergencia y detectores de humo',
+  'Cambio de cableado e instalaciones eléctricas expuestas',
+  'Adecuación de accesos, escaleras, barandas y salidas',
+  'Sistemas contra incendio y detección',
+  'Planos de arquitectura, eléctricos, de señalización y de evacuación',
+  'Plan de seguridad, capacitación y simulacro',
+];
+
+const risks = [
+  { level: 'Riesgo bajo o medio', when: 'La mayoría de oficinas, tiendas pequeñas y locales de atención al público.', how: 'Se presenta una declaración jurada de cumplimiento de condiciones de seguridad junto con la solicitud de licencia. La inspección se realiza después de otorgada la licencia.' },
+  { level: 'Riesgo alto o muy alto', when: 'Por ejemplo restaurantes y discotecas grandes, clínicas, colegios, gimnasios, almacenes, industrias y locales con mucha afluencia.', how: 'La inspección se realiza antes de otorgar la licencia. El local debe cumplir todas las condiciones de seguridad desde el primer día.' },
+];
+
+const faqs = [
+  { q: '¿El Certificado ITSE es lo mismo que el certificado de Defensa Civil?', a: 'Sí. Antes se le llamaba certificado de Defensa Civil o de INDECI. Hoy el nombre oficial es Certificado de Inspección Técnica de Seguridad en Edificaciones (ITSE) y lo emite la municipalidad donde está tu local.' },
+  { q: '¿Necesito el ITSE para sacar mi licencia de funcionamiento?', a: 'Sí. La licencia de funcionamiento exige cumplir las condiciones de seguridad. Según el nivel de riesgo de tu local, la inspección se hace antes o después de otorgar la licencia.' },
+  { q: '¿Qué pasa si la inspección encuentra observaciones?', a: 'La municipalidad te da un plazo para corregirlas. Como hacemos también las obras, levantamos las observaciones nosotros mismos y no tienes que buscar a otro proveedor.' },
+  { q: '¿Cuánto dura el Certificado ITSE?', a: 'Tiene una vigencia de dos años. Te recomendamos revisar el local unos meses antes de que venza para renovarlo sin apuros.' },
+  { q: '¿Cuánto cuesta y cuánto demora?', a: 'Depende del tamaño del local, su nivel de riesgo y las mejoras que necesite. Después del diagnóstico te damos un presupuesto y un cronograma por escrito.' },
+  { q: '¿Atienden fuera de Lima?', a: 'Sí. Trabajamos en Lima y en provincias. Escríbenos con la ubicación del local y lo coordinamos.' },
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base
+  title="Certificado ITSE (Defensa Civil) y licencia de funcionamiento"
+  description="Obtén tu Certificado ITSE y tu licencia de funcionamiento en Lima: diagnóstico del local, expediente técnico, obras para levantar observaciones y seguimiento del trámite."
+  preloadImage="/img/expediente.webp"
+>
+  <section class="page-hero" style="--hero-img:url(/img/expediente.webp)">
+    <div class="container">
+      <span class="eyebrow" style="color:#b9e07f">ITSE · Defensa Civil · Licencias</span>
+      <h1>Certificado ITSE y licencia de funcionamiento, de principio a fin</h1>
+      <p>Preparamos el expediente, hacemos las obras que pide la inspección y te acompañamos hasta que tu negocio pueda operar en regla.</p>
+      <div class="actions">
+        <a class="btn" href={site.whatsappItse} target="_blank" rel="noopener">Evalúa tu local por WhatsApp</a>
+        <a class="btn ghost" href="/contacto/">Solicitar cotización</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid-2">
+      <div>
+        <span class="eyebrow">Por qué con nosotros</span>
+        <h2>El trámite y las obras, con un solo equipo</h2>
+        <p>La mayoría de locales no pasa la inspección a la primera por detalles de obra: un tablero sin rotular, un pozo a tierra sin protocolo o una ruta de evacuación mal señalizada. Si quien hace el expediente no hace las obras, el trámite se alarga.</p>
+        <p>En Arqdeco somos arquitectos e ingenieros que hacemos las dos cosas. Detectamos lo que falta, lo corregimos y lo dejamos documentado para la inspección.</p>
+      </div>
+      <Photo src="/img/galeria/gal-06.webp" alt="Instalación de señalización de seguridad y tableros eléctricos" />
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <span class="eyebrow">El proceso</span>
+      <h2>Cómo obtienes tu certificado</h2>
+      <div class="steps" style="margin-top:32px">
+        {steps.map((st, i) => (
+          <div class="step">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{st.title}</h3>
+            <p>{st.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Nivel de riesgo</span>
+      <h2>¿La inspección es antes o después de la licencia?</h2>
+      <p class="lead">Depende del nivel de riesgo de tu local, que se define por el giro, el área y la cantidad de personas que recibe. En el diagnóstico te decimos cuál es el tuyo.</p>
+      <table class="risk-table" style="margin-top:24px">
+        <thead><tr><th>Nivel</th><th>Locales típicos</th><th>Cómo es la inspección</th></tr></thead>
+        <tbody>
+          {risks.map((r) => <tr><td>{r.level}</td><td>{r.when}</td><td>{r.how}</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container grid grid-2" style="align-items:start">
+      <div>
+        <span class="eyebrow">Obras civiles</span>
+        <h2>Lo que solemos corregir para pasar la inspección</h2>
+        <ul class="check-list" style="margin-top:20px">{works.map((w) => <li>{w}</li>)}</ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Para tu diagnóstico, envíanos</h3>
+        <ul class="check-list" style="margin-top:16px">
+          <li>Dirección y distrito del local</li>
+          <li>Giro del negocio</li>
+          <li>Área aproximada en metros cuadrados</li>
+          <li>Algunas fotos del local y del tablero eléctrico</li>
+          <li>Si ya tuviste una inspección, el acta de observaciones</li>
+        </ul>
+        <div class="actions"><a class="btn" href={site.whatsappItse} target="_blank" rel="noopener">Enviar por WhatsApp</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:860px">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Lo que más nos preguntan</h2>
+      <div class="faq">
+        {faqs.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+      <p style="margin-top:24px">Revisa también la <a href="/normativas/">normativa que aplicamos</a>.</p>
+    </div>
+  </section>
+
+  <CtaBand />
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+</Base>

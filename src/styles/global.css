@@ -167,3 +167,21 @@ a.card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.
 .feature > div { padding: 0 10px; }
 .feature h3 { font-size: 1.4rem; }
 .feature p { color: var(--ink-soft); margin: 0; }
+
+/* Pasos del proceso (portada y página ITSE) */
+.steps { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); counter-reset: step; }
+.step { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: var(--radius); padding: 24px; }
+.step .num { font-size: .85rem; font-weight: 800; color: var(--accent); letter-spacing: .1em; }
+.step h3 { margin: .4em 0 .3em; font-size: 1.15rem; }
+.step p { color: var(--ink-soft); margin: 0; }
+.risk-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.risk-table th, .risk-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.risk-table th { background: var(--paper-2); font-size: .9rem; }
+@media (max-width: 600px) { .risk-table, .risk-table tbody, .risk-table tr, .risk-table td { display: block; } .risk-table thead { display: none; } .risk-table td:first-child { font-weight: 700; padding-bottom: 0; border-bottom: 0; } }
+.faq details { border-bottom: 1px solid var(--line); padding: 16px 0; }
+.faq summary { cursor: pointer; font-weight: 700; font-size: 1.05rem; }
+.faq details p { color: var(--ink-soft); margin: .6em 0 0; }
+.consent { display: flex !important; grid-template-columns: none; gap: 10px !important; align-items: flex-start; font-weight: 400 !important; font-size: .88rem !important; color: var(--ink-soft); }
+.consent input { width: auto !important; margin-top: 3px; flex: none; }
+.legal h2 { font-size: 1.3rem; margin-top: 1.6em; }
+.legal { max-width: 760px; }
