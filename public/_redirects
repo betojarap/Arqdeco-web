@@ -1,7 +1,30 @@
-# Direcciones antiguas de WordPress que ya no existen
-/index.php/contacto/   /contacto/   301
-/index.php/nosotros/   /nosotros/   301
-/index.php/*           /:splat      301
-/normativa/            /normativas/ 301
-/wp-admin/*            /            301
-/wp-login.php          /            301
+# Direcciones antiguas de WordPress que ya no existen (redirección permanente 301,
+# así Google traspasa el posicionamiento de la dirección vieja a la nueva).
+/index.php/contacto/    /contacto/    301
+/index.php/nosotros/    /nosotros/    301
+/index.php/normativa/   /normativas/  301
+/index.php/normativas/  /normativas/  301
+/index.php              /             301
+/index.php/             /             301
+/index.php/*            /:splat       301
+/normativa              /normativas/  301
+/normativa/             /normativas/  301
+/home/                  /             301
+/inicio/                /             301
+/quienes-somos/         /nosotros/    301
+/galeria-de-fotos/      /galeria/     301
+/portafolio/            /galeria/     301
+/proyectos/             /galeria/     301
+/contactenos/           /contacto/    301
+/contactanos/           /contacto/    301
+
+# Rutas internas de WordPress: llevan al inicio en lugar de mostrar un error
+/feed/                  /             301
+/feed/*                 /             301
+/comments/feed/         /             301
+/category/*             /             301
+/tag/*                  /             301
+/author/*               /             301
+/wp-admin/*             /             301
+/wp-login.php           /             301
+/xmlrpc.php             /             301

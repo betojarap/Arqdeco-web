@@ -3,10 +3,11 @@ import Base from '../layouts/Base.astro';
 import Photo from '../components/Photo.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { listImages } from '../data/images';
+import { caption } from '../data/captions';
 const images = listImages('galeria');
 ---
-<Base title="Galería" description="Obras, remodelaciones y mantenimientos realizados por Arqdeco Perú.">
-  <section class="page-hero" style="--hero-img:url(/img/galeria/gal-16.jpg)">
+<Base title="Galería de obras y remodelaciones en Lima" description="Fotos de obras, remodelaciones de oficinas, mantenimientos, sistemas contra incendio y simulacros realizados por Arqdeco Perú en Lima.">
+  <section class="page-hero" style="--hero-img:url(/img/galeria/gal-16.webp)">
     <div class="container">
       <span class="eyebrow" style="color:#b9e07f">Galería</span>
       <h1>Nuestros trabajos</h1>
@@ -19,8 +20,8 @@ const images = listImages('galeria');
       {images.length > 0 ? (
         <div class="gallery">
           {images.map((src, i) => (
-            <button type="button" data-full={src} aria-label={`Ampliar foto ${i + 1}`}>
-              <Photo src={src} alt={`Trabajo de Arqdeco, foto ${i + 1}`} />
+            <button type="button" data-full={src} aria-label={`Ampliar: ${caption(src, `foto ${i + 1}`)}`}>
+              <Photo src={src} alt={caption(src, `Trabajo de Arqdeco, foto ${i + 1}`)} />
             </button>
           ))}
         </div>
@@ -43,6 +44,7 @@ const images = listImages('galeria');
     b.addEventListener('click', () => {
       if (!dlg || !img) return;
       img.src = b.dataset.full!;
+      img.alt = b.querySelector('img')?.alt ?? '';
       dlg.showModal();
     }),
   );

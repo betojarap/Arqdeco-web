@@ -14,6 +14,8 @@ export const site = {
   email: 'susana@arqdeco.com.pe',
   // Clave pública de Web3Forms para el formulario de contacto (no es secreta).
   web3formsKey: 'e1d3c64f-c7ab-4694-a053-ed0b19c4ce1a',
+  // Dirección para Google (datos estructurados): calle y número, sin distrito.
+  streetAddress: 'Av. Circunvalación del Golf Los Incas 134, Int. 26, Centro Empresarial Panorama Torre 2, Piso 6',
   address: 'Av. Circunvalacion del Golf Los Incas Nro. 134 Int. 26 Centro Empresarial Panorama Torre 2 Piso 6 Lima - Lima - Santiago de Surco',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Av. Circunvalacion del Golf Los Incas 134, Santiago de Surco, Lima, Perú'),
   social: {
@@ -39,7 +41,7 @@ export type Service = { id: string; title: string; short: string; image: string;
 export const services: Service[] = [
   {
     id: 'servicios-generales',
-    image: '/img/galeria/gal-04.jpg',
+    image: '/img/galeria/gal-04.webp',
     title: 'Servicios generales y mantenimiento',
     short: 'Construcción, ampliaciones, remodelaciones e instalaciones para oficinas, viviendas y locales comerciales.',
     items: [
@@ -57,7 +59,7 @@ export const services: Service[] = [
   },
   {
     id: 'anteproyectos',
-    image: '/img/galeria/gal-16.jpg',
+    image: '/img/galeria/gal-16.webp',
     title: 'Anteproyectos y obras civiles',
     short: 'Planos, presupuestos, licencias de edificación, ejecución y supervisión de obra.',
     items: [
@@ -72,7 +74,7 @@ export const services: Service[] = [
   },
   {
     id: 'expedientes-tecnicos',
-    image: '/img/galeria/gal-03.jpg',
+    image: '/img/galeria/gal-03.webp',
     title: 'Expedientes técnicos (INDECI – Defensa Civil)',
     short: 'Te acompañamos hasta obtener tu Certificado de Inspección Técnica de Seguridad en Edificaciones.',
     items: [
@@ -87,7 +89,7 @@ export const services: Service[] = [
   },
   {
     id: 'tasaciones',
-    image: '/img/galeria/gal-08.jpg',
+    image: '/img/galeria/gal-08.webp',
     title: 'Tasaciones',
     short: 'Valuaciones comerciales y de realización en Lima y provincias.',
     items: [
@@ -99,7 +101,7 @@ export const services: Service[] = [
   },
   {
     id: 'licencias',
-    image: '/img/galeria/gal-17.jpg',
+    image: '/img/galeria/gal-17.webp',
     title: 'Licencias de funcionamiento',
     short: 'Preparamos y tramitamos tu expediente ante la municipalidad.',
     items: [
@@ -110,7 +112,7 @@ export const services: Service[] = [
   },
   {
     id: 'saneamiento',
-    image: '/img/galeria/IMG-20180825-WA0046.jpg',
+    image: '/img/galeria/IMG-20180825-WA0046.webp',
     title: 'Saneamiento físico legal de inmuebles',
     short: 'Ordenamos la situación registral y legal de tu propiedad.',
     items: [
